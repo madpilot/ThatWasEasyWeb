@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>That was easy!</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Configure your button</h1>
+      </header>
+
+      <div class="notification hidden" id="notification">
+        <p>Your settings have been saved! You can now re-connect to your regular WIFI network.</p>
+        <p>You can access this configuration panel at <a id="device-name-link" href=""></a></p>
+      </div>
+      <div class="notification error hidden" id="error"></div>
+
+      <section>
+        <form action="post" method="/save" id="form">
+          <div id="ssid-wrapper" class="hidden">
+						<label for="ssid">SSID</label>
+          	<span class="wrapper"><select id="ssid" disabled><option>Scanning...</option></select></span>
+          </div>
+
+					<div id="passkey-wrapper" class="hidden">
+						<label for="passkey">
+              Passkey
+              <span class="inline-error hidden" id="passkey-error"></span>
+            </label>
+						<span class="wrapper"><input type="text" id="passkey" name="passkey" disabled></span>
+          </div>
+
+          <div id="device-name-wrapper">
+            <label for="deviceName">
+              Device name
+              <span class="inline-error hidden" id="deviceName-error"></span>
+            </label>
+            <span class="wrapper"><input type="text" id="deviceName" name="deviceName" disabled></span>
+          </div>
+
+          <div id="webhook-wrapper">
+            <label for="webhook">
+              Webhook URL
+              <span class="inline-error hidden" id="webhook-error"></span>
+            </label>
+            <span class="wrapper"><input type="text" id="webhook" name="webhook" placeholder="http://someserver.com/webhook.json" disabled></span>
+          </div>
+
+					<span class="wrapper"><button id="button" disabled>Save</button></span>
+        </form>
+      </section>
+    </div>
+    <script src="application.js"></script>
+  </body>
+</html>

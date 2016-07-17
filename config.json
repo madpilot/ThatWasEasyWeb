@@ -1,0 +1,5 @@
+{
+  "apConfigured":true,
+  "deviceName": "easy",
+  "webhook": "http://192.168.0.1/webhook.json"
+}
